@@ -52,8 +52,9 @@ struct ListView: View {
                     }
                 }
             }
+            #if os(tvOS) || os(iOS)
             .listStyle(GroupedListStyle())
-            
+            #endif
         }
 
     }

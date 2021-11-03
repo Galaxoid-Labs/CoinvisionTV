@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  Shared
 //
 //  Created by Jacob Davis on 11/3/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     
     @EnvironmentObject var dataProvider: DataProvider
     @State private var selectedMarketItem: MarketItem? = nil
@@ -36,14 +36,13 @@ struct ContentView: View {
         }, content: { item in
             MarketItemDetailView(marketItemId: item.id)
         })
-
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static let dataProvider = DataProvider()
     static var previews: some View {
-        ContentView()
+        MainView()
             .environmentObject(dataProvider)
     }
 }

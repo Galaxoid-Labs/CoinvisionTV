@@ -17,7 +17,7 @@ struct BubblesView: View {
         let scene = BubblesScene(marketItems: $dataProvider.marketItems)
         scene.size = SPRITE_KIT_VIEWPORT
         scene.scaleMode = .fill
-        scene.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
+        scene.backgroundColor = SKColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
         return scene
     }
     

@@ -116,7 +116,9 @@ struct OptionsView: View {
                             }
                         }
                         .padding(.leading, 64)
+                        #if os(tvOS) || os(iOS)
                         .listStyle(GroupedListStyle())
+                        #endif
                         .onAppear {
                             withAnimation {
                                 self.menuLabel = "Ordering"
@@ -157,7 +159,9 @@ struct OptionsView: View {
                             
                         }
                         .padding(.leading, 64)
+                        #if os(tvOS) || os(iOS)
                         .listStyle(GroupedListStyle())
+                        #endif
                         .onAppear {
                             withAnimation {
                                 self.menuLabel = "Currency"
@@ -201,7 +205,9 @@ struct OptionsView: View {
                             }
                         }
                         .padding(.leading, 64)
+                        #if os(tvOS) || os(iOS)
                         .listStyle(GroupedListStyle())
+                        #endif
                         .onAppear {
                             withAnimation {
                                 self.menuLabel = "Appearance"
@@ -224,7 +230,9 @@ struct OptionsView: View {
                     })
 
                 }
+                #if os(tvOS) || os(iOS)
                 .listStyle(GroupedListStyle())
+                #endif
                 .padding(.leading, 64)
                 
             }

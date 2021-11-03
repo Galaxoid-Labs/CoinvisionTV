@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		473ECF9C2733243600DED978 /* CoinvisionTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECF8C2733243500DED978 /* CoinvisionTVApp.swift */; };
 		473ECF9D2733243600DED978 /* CoinvisionTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECF8C2733243500DED978 /* CoinvisionTVApp.swift */; };
-		473ECF9E2733243600DED978 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECF8D2733243500DED978 /* ContentView.swift */; };
-		473ECF9F2733243600DED978 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECF8D2733243500DED978 /* ContentView.swift */; };
+		473ECF9E2733243600DED978 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECF8D2733243500DED978 /* MainView.swift */; };
+		473ECF9F2733243600DED978 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECF8D2733243500DED978 /* MainView.swift */; };
 		473ECFA02733243600DED978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473ECF8E2733243600DED978 /* Assets.xcassets */; };
 		473ECFA12733243600DED978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473ECF8E2733243600DED978 /* Assets.xcassets */; };
 		473ECFBE273324DB00DED978 /* CoinGecko in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFBD273324DB00DED978 /* CoinGecko */; };
@@ -24,7 +24,7 @@
 		473ECFE4273326E800DED978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473ECFE3273326E800DED978 /* Assets.xcassets */; };
 		473ECFE7273326E800DED978 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473ECFE6273326E800DED978 /* Preview Assets.xcassets */; };
 		473ECFEB2733270600DED978 /* CoinvisionTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECF8C2733243500DED978 /* CoinvisionTVApp.swift */; };
-		473ECFEC2733270B00DED978 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECF8D2733243500DED978 /* ContentView.swift */; };
+		473ECFEC2733270B00DED978 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECF8D2733243500DED978 /* MainView.swift */; };
 		473ECFEE2733286700DED978 /* CoinGecko in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFED2733286700DED978 /* CoinGecko */; };
 		473ECFF02733286700DED978 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFEF2733286700DED978 /* Charts */; };
 		473ECFF22733286700DED978 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFF12733286700DED978 /* SDWebImageSwiftUI */; };
@@ -53,11 +53,13 @@
 		473ED01B27332B1000DED978 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 473ED01A27332B1000DED978 /* SwiftSoup */; };
 		473ED01D27332B1700DED978 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 473ED01C27332B1700DED978 /* SwiftSoup */; };
 		473ED01F27332B1C00DED978 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 473ED01E27332B1C00DED978 /* SwiftSoup */; };
+		473ED025273339A400DED978 /* TVMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED024273339A400DED978 /* TVMainView.swift */; };
+		473ED02727333B4000DED978 /* MacMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED02627333B4000DED978 /* MacMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		473ECF8C2733243500DED978 /* CoinvisionTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinvisionTVApp.swift; sourceTree = "<group>"; };
-		473ECF8D2733243500DED978 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		473ECF8D2733243500DED978 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		473ECF8E2733243600DED978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		473ECF932733243600DED978 /* Coinvision TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coinvision TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		473ECF992733243600DED978 /* CoinvisionTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinvisionTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,8 @@
 		473ED00127332AC100DED978 /* TilesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TilesView.swift; sourceTree = "<group>"; };
 		473ED00227332AC100DED978 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		473ED00327332AC100DED978 /* BubblesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubblesView.swift; sourceTree = "<group>"; };
+		473ED024273339A400DED978 /* TVMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMainView.swift; sourceTree = "<group>"; };
+		473ED02627333B4000DED978 /* MacMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +134,7 @@
 			children = (
 				473ECFFC27332AAB00DED978 /* Views */,
 				473ECF8C2733243500DED978 /* CoinvisionTVApp.swift */,
-				473ECF8D2733243500DED978 /* ContentView.swift */,
+				473ECF8D2733243500DED978 /* MainView.swift */,
 				473ECFF8273329FB00DED978 /* DataProvider.swift */,
 				473ECF8E2733243600DED978 /* Assets.xcassets */,
 			);
@@ -150,6 +154,8 @@
 		473ECF9A2733243600DED978 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				473ED0202733321D00DED978 /* Views */,
+				473ED02627333B4000DED978 /* MacMainView.swift */,
 				473ECF9B2733243600DED978 /* macOS.entitlements */,
 			);
 			path = macOS;
@@ -165,6 +171,8 @@
 		473ECFDE273326E800DED978 /* tvOS */ = {
 			isa = PBXGroup;
 			children = (
+				473ED0232733397600DED978 /* Views */,
+				473ED024273339A400DED978 /* TVMainView.swift */,
 				473ECFE3273326E800DED978 /* Assets.xcassets */,
 				473ECFE5273326E800DED978 /* Preview Content */,
 			);
@@ -188,6 +196,20 @@
 				473ECFFD27332AC100DED978 /* MarketItemDetailView.swift */,
 				473ECFFE27332AC100DED978 /* OptionsView.swift */,
 				473ED00127332AC100DED978 /* TilesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		473ED0202733321D00DED978 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		473ED0232733397600DED978 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,7 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				473ECFF9273329FB00DED978 /* DataProvider.swift in Sources */,
-				473ECF9E2733243600DED978 /* ContentView.swift in Sources */,
+				473ECF9E2733243600DED978 /* MainView.swift in Sources */,
 				473ED00427332AC100DED978 /* MarketItemDetailView.swift in Sources */,
 				473ED00A27332AC100DED978 /* BubbleNode.swift in Sources */,
 				473ED00727332AC100DED978 /* OptionsView.swift in Sources */,
@@ -364,8 +386,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473ED02727333B4000DED978 /* MacMainView.swift in Sources */,
 				473ECFFA273329FB00DED978 /* DataProvider.swift in Sources */,
-				473ECF9F2733243600DED978 /* ContentView.swift in Sources */,
+				473ECF9F2733243600DED978 /* MainView.swift in Sources */,
 				473ED00527332AC100DED978 /* MarketItemDetailView.swift in Sources */,
 				473ED00B27332AC100DED978 /* BubbleNode.swift in Sources */,
 				473ED00827332AC100DED978 /* OptionsView.swift in Sources */,
@@ -381,7 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				473ECFFB273329FB00DED978 /* DataProvider.swift in Sources */,
-				473ECFEC2733270B00DED978 /* ContentView.swift in Sources */,
+				473ECFEC2733270B00DED978 /* MainView.swift in Sources */,
 				473ED00627332AC100DED978 /* MarketItemDetailView.swift in Sources */,
 				473ED00C27332AC100DED978 /* BubbleNode.swift in Sources */,
 				473ED00927332AC100DED978 /* OptionsView.swift in Sources */,
@@ -389,6 +412,7 @@
 				473ED01227332AC100DED978 /* TilesView.swift in Sources */,
 				473ECFEB2733270600DED978 /* CoinvisionTVApp.swift in Sources */,
 				473ED01527332AC100DED978 /* ListView.swift in Sources */,
+				473ED025273339A400DED978 /* TVMainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +470,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -499,6 +525,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;

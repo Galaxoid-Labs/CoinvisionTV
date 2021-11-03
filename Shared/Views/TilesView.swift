@@ -108,7 +108,9 @@ struct TileView: View {
             )
 
         }
+        #if os(tvOS)
         .buttonStyle(CardButtonStyle())
+        #endif
         .padding(.bottom, 24)
         
     }
