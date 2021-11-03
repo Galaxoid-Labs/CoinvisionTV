@@ -13,15 +13,65 @@
 		473ECF9F2733243600DED978 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECF8D2733243500DED978 /* ContentView.swift */; };
 		473ECFA02733243600DED978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473ECF8E2733243600DED978 /* Assets.xcassets */; };
 		473ECFA12733243600DED978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473ECF8E2733243600DED978 /* Assets.xcassets */; };
+		473ECFBE273324DB00DED978 /* CoinGecko in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFBD273324DB00DED978 /* CoinGecko */; };
+		473ECFC1273324FA00DED978 /* CoinGecko in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFC0273324FA00DED978 /* CoinGecko */; };
+		473ECFC62733253F00DED978 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFC52733253F00DED978 /* Charts */; };
+		473ECFC82733254A00DED978 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFC72733254A00DED978 /* Charts */; };
+		473ECFCD2733259C00DED978 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFCC2733259C00DED978 /* SDWebImageSwiftUI */; };
+		473ECFCF273325A400DED978 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFCE273325A400DED978 /* SDWebImageSwiftUI */; };
+		473ECFD4273325BA00DED978 /* EasyStash in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFD3273325BA00DED978 /* EasyStash */; };
+		473ECFD6273325C000DED978 /* EasyStash in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFD5273325C000DED978 /* EasyStash */; };
+		473ECFE4273326E800DED978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473ECFE3273326E800DED978 /* Assets.xcassets */; };
+		473ECFE7273326E800DED978 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473ECFE6273326E800DED978 /* Preview Assets.xcassets */; };
+		473ECFEB2733270600DED978 /* CoinvisionTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECF8C2733243500DED978 /* CoinvisionTVApp.swift */; };
+		473ECFEC2733270B00DED978 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECF8D2733243500DED978 /* ContentView.swift */; };
+		473ECFEE2733286700DED978 /* CoinGecko in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFED2733286700DED978 /* CoinGecko */; };
+		473ECFF02733286700DED978 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFEF2733286700DED978 /* Charts */; };
+		473ECFF22733286700DED978 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFF12733286700DED978 /* SDWebImageSwiftUI */; };
+		473ECFF42733286700DED978 /* EasyStash in Frameworks */ = {isa = PBXBuildFile; productRef = 473ECFF32733286700DED978 /* EasyStash */; };
+		473ECFF9273329FB00DED978 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECFF8273329FB00DED978 /* DataProvider.swift */; };
+		473ECFFA273329FB00DED978 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECFF8273329FB00DED978 /* DataProvider.swift */; };
+		473ECFFB273329FB00DED978 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECFF8273329FB00DED978 /* DataProvider.swift */; };
+		473ED00427332AC100DED978 /* MarketItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECFFD27332AC100DED978 /* MarketItemDetailView.swift */; };
+		473ED00527332AC100DED978 /* MarketItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECFFD27332AC100DED978 /* MarketItemDetailView.swift */; };
+		473ED00627332AC100DED978 /* MarketItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECFFD27332AC100DED978 /* MarketItemDetailView.swift */; };
+		473ED00727332AC100DED978 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECFFE27332AC100DED978 /* OptionsView.swift */; };
+		473ED00827332AC100DED978 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECFFE27332AC100DED978 /* OptionsView.swift */; };
+		473ED00927332AC100DED978 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECFFE27332AC100DED978 /* OptionsView.swift */; };
+		473ED00A27332AC100DED978 /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECFFF27332AC100DED978 /* BubbleNode.swift */; };
+		473ED00B27332AC100DED978 /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECFFF27332AC100DED978 /* BubbleNode.swift */; };
+		473ED00C27332AC100DED978 /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ECFFF27332AC100DED978 /* BubbleNode.swift */; };
+		473ED01027332AC100DED978 /* TilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED00127332AC100DED978 /* TilesView.swift */; };
+		473ED01127332AC100DED978 /* TilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED00127332AC100DED978 /* TilesView.swift */; };
+		473ED01227332AC100DED978 /* TilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED00127332AC100DED978 /* TilesView.swift */; };
+		473ED01327332AC100DED978 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED00227332AC100DED978 /* ListView.swift */; };
+		473ED01427332AC100DED978 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED00227332AC100DED978 /* ListView.swift */; };
+		473ED01527332AC100DED978 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED00227332AC100DED978 /* ListView.swift */; };
+		473ED01627332AC100DED978 /* BubblesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED00327332AC100DED978 /* BubblesView.swift */; };
+		473ED01727332AC100DED978 /* BubblesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED00327332AC100DED978 /* BubblesView.swift */; };
+		473ED01827332AC100DED978 /* BubblesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED00327332AC100DED978 /* BubblesView.swift */; };
+		473ED01B27332B1000DED978 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 473ED01A27332B1000DED978 /* SwiftSoup */; };
+		473ED01D27332B1700DED978 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 473ED01C27332B1700DED978 /* SwiftSoup */; };
+		473ED01F27332B1C00DED978 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 473ED01E27332B1C00DED978 /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		473ECF8C2733243500DED978 /* CoinvisionTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinvisionTVApp.swift; sourceTree = "<group>"; };
 		473ECF8D2733243500DED978 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		473ECF8E2733243600DED978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		473ECF932733243600DED978 /* CoinvisionTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinvisionTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		473ECF932733243600DED978 /* Coinvision TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coinvision TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		473ECF992733243600DED978 /* CoinvisionTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinvisionTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473ECF9B2733243600DED978 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		473ECFDD273326E800DED978 /* Coinvision TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coinvision TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		473ECFE3273326E800DED978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		473ECFE6273326E800DED978 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		473ECFF8273329FB00DED978 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		473ECFFD27332AC100DED978 /* MarketItemDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketItemDetailView.swift; sourceTree = "<group>"; };
+		473ECFFE27332AC100DED978 /* OptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		473ECFFF27332AC100DED978 /* BubbleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleNode.swift; sourceTree = "<group>"; };
+		473ED00127332AC100DED978 /* TilesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TilesView.swift; sourceTree = "<group>"; };
+		473ED00227332AC100DED978 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		473ED00327332AC100DED978 /* BubblesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubblesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +79,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473ECFCD2733259C00DED978 /* SDWebImageSwiftUI in Frameworks */,
+				473ECFBE273324DB00DED978 /* CoinGecko in Frameworks */,
+				473ECFD4273325BA00DED978 /* EasyStash in Frameworks */,
+				473ECFC62733253F00DED978 /* Charts in Frameworks */,
+				473ED01B27332B1000DED978 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +91,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473ECFCF273325A400DED978 /* SDWebImageSwiftUI in Frameworks */,
+				473ECFC1273324FA00DED978 /* CoinGecko in Frameworks */,
+				473ECFD6273325C000DED978 /* EasyStash in Frameworks */,
+				473ECFC82733254A00DED978 /* Charts in Frameworks */,
+				473ED01D27332B1700DED978 /* SwiftSoup in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		473ECFDA273326E800DED978 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				473ECFF22733286700DED978 /* SDWebImageSwiftUI in Frameworks */,
+				473ECFEE2733286700DED978 /* CoinGecko in Frameworks */,
+				473ECFF42733286700DED978 /* EasyStash in Frameworks */,
+				473ECFF02733286700DED978 /* Charts in Frameworks */,
+				473ED01F27332B1C00DED978 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,15 +119,19 @@
 			children = (
 				473ECF8B2733243500DED978 /* Shared */,
 				473ECF9A2733243600DED978 /* macOS */,
+				473ECFDE273326E800DED978 /* tvOS */,
 				473ECF942733243600DED978 /* Products */,
+				473ECFBF273324FA00DED978 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		473ECF8B2733243500DED978 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				473ECFFC27332AAB00DED978 /* Views */,
 				473ECF8C2733243500DED978 /* CoinvisionTVApp.swift */,
 				473ECF8D2733243500DED978 /* ContentView.swift */,
+				473ECFF8273329FB00DED978 /* DataProvider.swift */,
 				473ECF8E2733243600DED978 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -64,8 +140,9 @@
 		473ECF942733243600DED978 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				473ECF932733243600DED978 /* CoinvisionTV.app */,
+				473ECF932733243600DED978 /* Coinvision TV.app */,
 				473ECF992733243600DED978 /* CoinvisionTV.app */,
+				473ECFDD273326E800DED978 /* Coinvision TV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +153,43 @@
 				473ECF9B2733243600DED978 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		473ECFBF273324FA00DED978 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		473ECFDE273326E800DED978 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				473ECFE3273326E800DED978 /* Assets.xcassets */,
+				473ECFE5273326E800DED978 /* Preview Content */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
+		473ECFE5273326E800DED978 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				473ECFE6273326E800DED978 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		473ECFFC27332AAB00DED978 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				473ECFFF27332AC100DED978 /* BubbleNode.swift */,
+				473ED00327332AC100DED978 /* BubblesView.swift */,
+				473ED00227332AC100DED978 /* ListView.swift */,
+				473ECFFD27332AC100DED978 /* MarketItemDetailView.swift */,
+				473ECFFE27332AC100DED978 /* OptionsView.swift */,
+				473ED00127332AC100DED978 /* TilesView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,8 +208,15 @@
 			dependencies = (
 			);
 			name = "CoinvisionTV (iOS)";
+			packageProductDependencies = (
+				473ECFBD273324DB00DED978 /* CoinGecko */,
+				473ECFC52733253F00DED978 /* Charts */,
+				473ECFCC2733259C00DED978 /* SDWebImageSwiftUI */,
+				473ECFD3273325BA00DED978 /* EasyStash */,
+				473ED01A27332B1000DED978 /* SwiftSoup */,
+			);
 			productName = "CoinvisionTV (iOS)";
-			productReference = 473ECF932733243600DED978 /* CoinvisionTV.app */;
+			productReference = 473ECF932733243600DED978 /* Coinvision TV.app */;
 			productType = "com.apple.product-type.application";
 		};
 		473ECF982733243600DED978 /* CoinvisionTV (macOS) */ = {
@@ -111,8 +232,39 @@
 			dependencies = (
 			);
 			name = "CoinvisionTV (macOS)";
+			packageProductDependencies = (
+				473ECFC0273324FA00DED978 /* CoinGecko */,
+				473ECFC72733254A00DED978 /* Charts */,
+				473ECFCE273325A400DED978 /* SDWebImageSwiftUI */,
+				473ECFD5273325C000DED978 /* EasyStash */,
+				473ED01C27332B1700DED978 /* SwiftSoup */,
+			);
 			productName = "CoinvisionTV (macOS)";
 			productReference = 473ECF992733243600DED978 /* CoinvisionTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		473ECFDC273326E800DED978 /* CoinvisionTV (tvOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 473ECFE8273326E800DED978 /* Build configuration list for PBXNativeTarget "CoinvisionTV (tvOS)" */;
+			buildPhases = (
+				473ECFD9273326E800DED978 /* Sources */,
+				473ECFDA273326E800DED978 /* Frameworks */,
+				473ECFDB273326E800DED978 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoinvisionTV (tvOS)";
+			packageProductDependencies = (
+				473ECFED2733286700DED978 /* CoinGecko */,
+				473ECFEF2733286700DED978 /* Charts */,
+				473ECFF12733286700DED978 /* SDWebImageSwiftUI */,
+				473ECFF32733286700DED978 /* EasyStash */,
+				473ED01E27332B1C00DED978 /* SwiftSoup */,
+			);
+			productName = tvOS;
+			productReference = 473ECFDD273326E800DED978 /* Coinvision TV.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -131,6 +283,9 @@
 					473ECF982733243600DED978 = {
 						CreatedOnToolsVersion = 13.1;
 					};
+					473ECFDC273326E800DED978 = {
+						CreatedOnToolsVersion = 13.1;
+					};
 				};
 			};
 			buildConfigurationList = 473ECF8A2733243500DED978 /* Build configuration list for PBXProject "CoinvisionTV" */;
@@ -142,12 +297,20 @@
 				Base,
 			);
 			mainGroup = 473ECF862733243500DED978;
+			packageReferences = (
+				473ECFBC273324DB00DED978 /* XCRemoteSwiftPackageReference "CoinGecko" */,
+				473ECFC42733253F00DED978 /* XCRemoteSwiftPackageReference "swiftui-charts" */,
+				473ECFCB2733259C00DED978 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				473ECFD2273325BA00DED978 /* XCRemoteSwiftPackageReference "EasyStash" */,
+				473ED01927332B1000DED978 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = 473ECF942733243600DED978 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				473ECF922733243600DED978 /* CoinvisionTV (iOS) */,
 				473ECF982733243600DED978 /* CoinvisionTV (macOS) */,
+				473ECFDC273326E800DED978 /* CoinvisionTV (tvOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -169,6 +332,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		473ECFDB273326E800DED978 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				473ECFE7273326E800DED978 /* Preview Assets.xcassets in Resources */,
+				473ECFE4273326E800DED978 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -176,8 +348,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473ECFF9273329FB00DED978 /* DataProvider.swift in Sources */,
 				473ECF9E2733243600DED978 /* ContentView.swift in Sources */,
+				473ED00427332AC100DED978 /* MarketItemDetailView.swift in Sources */,
+				473ED00A27332AC100DED978 /* BubbleNode.swift in Sources */,
+				473ED00727332AC100DED978 /* OptionsView.swift in Sources */,
+				473ED01627332AC100DED978 /* BubblesView.swift in Sources */,
+				473ED01027332AC100DED978 /* TilesView.swift in Sources */,
 				473ECF9C2733243600DED978 /* CoinvisionTVApp.swift in Sources */,
+				473ED01327332AC100DED978 /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,8 +364,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473ECFFA273329FB00DED978 /* DataProvider.swift in Sources */,
 				473ECF9F2733243600DED978 /* ContentView.swift in Sources */,
+				473ED00527332AC100DED978 /* MarketItemDetailView.swift in Sources */,
+				473ED00B27332AC100DED978 /* BubbleNode.swift in Sources */,
+				473ED00827332AC100DED978 /* OptionsView.swift in Sources */,
+				473ED01727332AC100DED978 /* BubblesView.swift in Sources */,
+				473ED01127332AC100DED978 /* TilesView.swift in Sources */,
 				473ECF9D2733243600DED978 /* CoinvisionTVApp.swift in Sources */,
+				473ED01427332AC100DED978 /* ListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		473ECFD9273326E800DED978 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				473ECFFB273329FB00DED978 /* DataProvider.swift in Sources */,
+				473ECFEC2733270B00DED978 /* ContentView.swift in Sources */,
+				473ED00627332AC100DED978 /* MarketItemDetailView.swift in Sources */,
+				473ED00C27332AC100DED978 /* BubbleNode.swift in Sources */,
+				473ED00927332AC100DED978 /* OptionsView.swift in Sources */,
+				473ED01827332AC100DED978 /* BubblesView.swift in Sources */,
+				473ED01227332AC100DED978 /* TilesView.swift in Sources */,
+				473ECFEB2733270600DED978 /* CoinvisionTVApp.swift in Sources */,
+				473ED01527332AC100DED978 /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +528,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.galaxoidlabs.CoinvisionTV;
-				PRODUCT_NAME = CoinvisionTV;
+				PRODUCT_NAME = "Coinvision TV";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -356,7 +558,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.galaxoidlabs.CoinvisionTV;
-				PRODUCT_NAME = CoinvisionTV;
+				PRODUCT_NAME = "Coinvision TV";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -371,6 +573,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -399,6 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -418,6 +622,65 @@
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		473ECFE9273326E800DED978 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"tvOS/Preview Content\"";
+				DEVELOPMENT_TEAM = MHMRS5FLW6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galaxoidlabs.CoinvisionTV;
+				PRODUCT_NAME = "Coinvision TV";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
+			};
+			name = Debug;
+		};
+		473ECFEA273326E800DED978 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"tvOS/Preview Content\"";
+				DEVELOPMENT_TEAM = MHMRS5FLW6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galaxoidlabs.CoinvisionTV;
+				PRODUCT_NAME = "Coinvision TV";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -451,7 +714,137 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		473ECFE8273326E800DED978 /* Build configuration list for PBXNativeTarget "CoinvisionTV (tvOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				473ECFE9273326E800DED978 /* Debug */,
+				473ECFEA273326E800DED978 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		473ECFBC273324DB00DED978 /* XCRemoteSwiftPackageReference "CoinGecko" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Galaxoid-Labs/CoinGecko";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		473ECFC42733253F00DED978 /* XCRemoteSwiftPackageReference "swiftui-charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spacenation/swiftui-charts.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		473ECFCB2733259C00DED978 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		473ECFD2273325BA00DED978 /* XCRemoteSwiftPackageReference "EasyStash" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onmyway133/EasyStash.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		473ED01927332B1000DED978 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		473ECFBD273324DB00DED978 /* CoinGecko */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ECFBC273324DB00DED978 /* XCRemoteSwiftPackageReference "CoinGecko" */;
+			productName = CoinGecko;
+		};
+		473ECFC0273324FA00DED978 /* CoinGecko */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ECFBC273324DB00DED978 /* XCRemoteSwiftPackageReference "CoinGecko" */;
+			productName = CoinGecko;
+		};
+		473ECFC52733253F00DED978 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ECFC42733253F00DED978 /* XCRemoteSwiftPackageReference "swiftui-charts" */;
+			productName = Charts;
+		};
+		473ECFC72733254A00DED978 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ECFC42733253F00DED978 /* XCRemoteSwiftPackageReference "swiftui-charts" */;
+			productName = Charts;
+		};
+		473ECFCC2733259C00DED978 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ECFCB2733259C00DED978 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		473ECFCE273325A400DED978 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ECFCB2733259C00DED978 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		473ECFD3273325BA00DED978 /* EasyStash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ECFD2273325BA00DED978 /* XCRemoteSwiftPackageReference "EasyStash" */;
+			productName = EasyStash;
+		};
+		473ECFD5273325C000DED978 /* EasyStash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ECFD2273325BA00DED978 /* XCRemoteSwiftPackageReference "EasyStash" */;
+			productName = EasyStash;
+		};
+		473ECFED2733286700DED978 /* CoinGecko */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ECFBC273324DB00DED978 /* XCRemoteSwiftPackageReference "CoinGecko" */;
+			productName = CoinGecko;
+		};
+		473ECFEF2733286700DED978 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ECFC42733253F00DED978 /* XCRemoteSwiftPackageReference "swiftui-charts" */;
+			productName = Charts;
+		};
+		473ECFF12733286700DED978 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ECFCB2733259C00DED978 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		473ECFF32733286700DED978 /* EasyStash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ECFD2273325BA00DED978 /* XCRemoteSwiftPackageReference "EasyStash" */;
+			productName = EasyStash;
+		};
+		473ED01A27332B1000DED978 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ED01927332B1000DED978 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		473ED01C27332B1700DED978 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ED01927332B1000DED978 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		473ED01E27332B1C00DED978 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473ED01927332B1000DED978 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 473ECF872733243500DED978 /* Project object */;
 }
