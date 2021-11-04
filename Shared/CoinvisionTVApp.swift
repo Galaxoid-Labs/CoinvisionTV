@@ -40,6 +40,9 @@ struct CoinvisionTVApp: App {
                 }
             #endif
         }
+//        #if os(macOS)
+//        .windowStyle(TitleBarWindowStyle())
+//        #endif
     }
     
     func handle(scenePhase: ScenePhase) {

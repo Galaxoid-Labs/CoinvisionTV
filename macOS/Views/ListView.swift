@@ -1,8 +1,8 @@
 //
 //  ListView.swift
-//  CoinvisionTV
+//  CoinvisionTV (macOS)
 //
-//  Created by Jacob Davis on 10/27/21.
+//  Created by Jacob Davis on 11/4/21.
 //
 
 import SwiftUI
@@ -27,20 +27,20 @@ struct ListView: View {
                 Text("24h Volume")
                     .font(.body)
                     .foregroundColor(.secondary)
-                    .frame(width: 250, alignment: .trailing)
+                    .frame(width: 80, alignment: .trailing)
                     .padding(.trailing, 32)
                 Text("Market Cap")
                     .font(.body)
                     .foregroundColor(.secondary)
-                    .frame(width: 250, alignment: .trailing)
+                    .frame(width: 70, alignment: .trailing)
                     .padding(.trailing, 24)
                 Text("Price")
                     .font(.body)
                     .foregroundColor(.secondary)
-                    .frame(width: 250, alignment: .trailing)
+                    .frame(width: 70, alignment: .trailing)
             }
-            .padding(.bottom, 16)
-            .padding(.trailing, 24)
+            .padding(.vertical, 16)
+            .padding(.trailing, 36)
             
             Divider()
             
@@ -48,15 +48,35 @@ struct ListView: View {
                 ForEach(marketItems) { marketItem in
                     Button(action: { self.selectedMarketItem = marketItem }) {
                         ListViewItem(marketItem: marketItem)
+                            .background(Material.thick)
+                            .background(isSelected(id: marketItem.id) ? .primary : Color.clear)
+                            .cornerRadius(8)
+                            .contentShape(Rectangle())
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
-            #if os(tvOS) || os(iOS)
-            .listStyle(GroupedListStyle())
-            #endif
+//            .overlay(
+//                HStack {
+//                    Spacer()
+//                    Rectangle()
+//                        .frame(width: 15)
+//                        .foregroundColor(.red.opacity(0.2)) //<-- Same
+//                }
+//            )
+            
         }
+        .frame(minWidth: 450)
 
     }
+    
+    func isSelected(id: String) -> Bool {
+        if let selectedMarketItem = selectedMarketItem {
+            return selectedMarketItem.id == id
+        }
+        return false
+    }
+    
 }
 
 struct ListView_Previews: PreviewProvider {
@@ -77,13 +97,14 @@ struct ListViewItem: View {
     
     var body: some View {
         
-        HStack(spacing: 16) {
+        HStack(spacing: 8) {
             
             WebImage(url: URL(string: marketItem.image))
+                .interpolation(.high)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 75, height: 75)
-                .cornerRadius(16)
+                .frame(width: 35, height: 35)
+                .cornerRadius(6)
 
             VStack(alignment: .leading) {
                 Text(marketItem.name)
@@ -94,14 +115,14 @@ struct ListViewItem: View {
                     .foregroundColor(.secondary)
             }
             
-            Spacer()
+            Spacer(minLength: 0)
             
-            LazyVStack(alignment: .trailing) {
+            VStack(alignment: .trailing) {
                 Text(marketItem.getTotalVolumeFormatted(forCurrency: dataProvider.currencyCode))
                     .font(.body)
                     .bold()
             }
-            .frame(width: 250)
+            //.frame(width: 80)
             
             Divider()
             
@@ -113,7 +134,7 @@ struct ListViewItem: View {
                     .font(.caption2)
                     .foregroundColor((marketItem.marketCapChangePercentage24H ?? .zero) > .zero ? .green : .red)
             }
-            .frame(width: 250)
+            .frame(width: 80)
             
             Divider()
             
@@ -125,7 +146,7 @@ struct ListViewItem: View {
                     .font(.caption2)
                     .foregroundColor((marketItem.priceChangePercentage24H ?? .zero) > .zero ? .green : .red)
             }
-            .frame(width: 250)
+            .frame(width: 80)
 
         }
         .padding(8)

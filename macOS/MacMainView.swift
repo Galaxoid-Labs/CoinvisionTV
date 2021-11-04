@@ -16,34 +16,79 @@ struct MacMainView: View {
         
         NavigationView {
             
-            List {
-                
+            SidebarView(selectedMarketItem: $selectedMarketItem)
+                .frame(minWidth: 200)
+                .toolbar {
+                    Button(action: toggleSidebar) {
+                        Image(systemName: "sidebar.left")
+                            .help("Toggle Sidebar")
+                        }
+                    }
+
+            Text("Placeholder")
+            if selectedMarketItem != nil {
+                ListMarketItemDetailView(marketItem: $selectedMarketItem)
+            } else {
+                VStack {
+                    Text("Select a coin from the list for more information.")
+                        .font(.title3)
+                }
+                .padding()
+                .background(Material.thick)
+                .cornerRadius(8)
+            }
+            
+        }
+        .navigationTitle("Coinvision TV")
+        .navigationViewStyle(.columns)
+
+    }
+
+    private func toggleSidebar() {
+        NSApp.keyWindow?.firstResponder?
+            .tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
+    }
+}
+
+
+struct SidebarView: View {
+    
+    @State private var isDefaultItemActive = true
+    @Binding var selectedMarketItem: MarketItem?
+    @EnvironmentObject var dataProvider: DataProvider
+    
+    var body: some View {
+        
+        List {
+            
+            Section("Menu") {
                 NavigationLink(destination: ListView(selectedMarketItem: $selectedMarketItem),
+                               isActive: $isDefaultItemActive,
                                label: {
-                    Text("List")
+                    Label("List", systemImage: "list.bullet.rectangle.fill")
                 })
                 
                 NavigationLink(destination: TilesView(selectedMarketItem: $selectedMarketItem),
                                label: {
-                    Text("Tiles")
+                    Label("Tiles", systemImage: "square.grid.3x2.fill")
                 })
                 
                 NavigationLink(destination: BubblesView(),
                                label: {
-                    Text("Bubbles")
+                    Label("Bubbles", systemImage: "circle.hexagongrid.fill")
                 })
                 
                 NavigationLink(destination: OptionsView(),
                                label: {
-                    Text("Options")
+                    Label("Options", systemImage: "gearshape")
                 })
             }
-            .listStyle(SidebarListStyle())
-            
-            ListView(selectedMarketItem: $selectedMarketItem)
             
         }
+        .listStyle(SidebarListStyle())
+        
     }
+    
 }
 
 struct MacMainView_Previews: PreviewProvider {
