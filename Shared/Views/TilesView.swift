@@ -101,7 +101,7 @@ struct TileView: View {
             }
             .padding()
             .frame(width: xM)
-            .frame(height: xM * 0.65)
+            .frame(height: xM * 0.7)
             .overlay(
                 RoundedRectangle(cornerRadius: 13)
                     .stroke(isUp() ? .green : .red, lineWidth: 10)

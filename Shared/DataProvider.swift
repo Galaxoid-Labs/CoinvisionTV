@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import CoinGecko
 import EasyStash
+import SwiftSoup
 
 typealias MarketItem = CoinGecko.V3.Coins.Markets.ResponseItem
 typealias CoinId = CoinGecko.V3.Coins.List.ResponseItem
@@ -125,3 +126,23 @@ class DataProvider: ObservableObject {
     
 }
 
+extension MarketItemDetail {
+    
+    func getFormattedDescription(forLocale: String) -> String {
+        
+        let descriptionComponents = (self.getDescription(forLocale: forLocale) ?? "").components(separatedBy: "\r\n\r\n")
+        var ret: [String] = []
+        
+        for desc in descriptionComponents {
+            if !desc.isEmpty {
+                if let doc = try? SwiftSoup.parse(desc), let text = try? doc.text() {
+                    ret.append(text)
+                }
+            }
+        }
+        
+        return ret.map{String($0)}.joined(separator: "\r\r")
+        
+    }
+    
+}

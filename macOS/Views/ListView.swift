@@ -11,7 +11,6 @@ import Charts
 
 struct ListView: View {
     
-    @Binding var selectedMarketItem: MarketItem?
     @EnvironmentObject var dataProvider: DataProvider
     
     var marketItems: [MarketItem] {
@@ -45,36 +44,18 @@ struct ListView: View {
             Divider()
             
             List {
-                ForEach(marketItems) { marketItem in
-                    Button(action: { self.selectedMarketItem = marketItem }) {
+                ForEach($dataProvider.marketItems) { $marketItem in
+                    NavigationLink(destination: ListMarketItemDetailView(marketItemId: marketItem.id),
+                                   label: {
                         ListViewItem(marketItem: marketItem)
-                            .background(Material.thick)
-                            .background(isSelected(id: marketItem.id) ? .primary : Color.clear)
-                            .cornerRadius(8)
-                            .contentShape(Rectangle())
-                    }
-                    .buttonStyle(PlainButtonStyle())
+                    })
                 }
             }
-//            .overlay(
-//                HStack {
-//                    Spacer()
-//                    Rectangle()
-//                        .frame(width: 15)
-//                        .foregroundColor(.red.opacity(0.2)) //<-- Same
-//                }
-//            )
             
         }
         .frame(minWidth: 450)
+        .background(Material.ultraThinMaterial)
 
-    }
-    
-    func isSelected(id: String) -> Bool {
-        if let selectedMarketItem = selectedMarketItem {
-            return selectedMarketItem.id == id
-        }
-        return false
     }
     
 }
@@ -82,7 +63,7 @@ struct ListView: View {
 struct ListView_Previews: PreviewProvider {
     static let dataProvider = DataProvider()
     static var previews: some View {
-        ListView(selectedMarketItem: .constant(nil))
+        ListView()
             .environmentObject(dataProvider)
             .task {
                 await dataProvider.fetchAndSetMarketItems()

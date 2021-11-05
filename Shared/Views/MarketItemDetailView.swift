@@ -141,11 +141,11 @@ struct MarketItemDetailView: View {
                 getSectionStats()
             }
 
-            if !getDescription().isEmpty {
+            if !(marketItemDetail?.getFormattedDescription(forLocale: dataProvider.languageCode) ?? "").isEmpty {
                 Section("About") {
 
                     LazyVStack {
-                        Text(getDescription())
+                        Text(marketItemDetail?.getFormattedDescription(forLocale: dataProvider.languageCode) ?? "")
                             .foregroundColor(.secondary)
                             .lineSpacing(4)
                             .padding(.horizontal, 4)
@@ -278,28 +278,6 @@ struct MarketItemDetailView: View {
         chartYData = marketItemChartPrices?.flattendPrices() ?? []
         
         loading = false
-    }
-    
-    func getDescription() -> String {
-        
-        let descriptionComponents = (marketItemDetail?.getDescription(forLocale: dataProvider.languageCode) ?? "").components(separatedBy: "\r\n\r\n")
-        
-        var ret: [String] = []
-        
-        for desc in descriptionComponents {
-            
-            if !desc.isEmpty {
-            
-                if let doc = try? SwiftSoup.parse(desc), let text = try? doc.text() {
-                    ret.append(text)
-                }
-                
-            }
-            
-        }
-        
-        return ret.map{String($0)}.joined(separator: "\r\r")
-        
     }
     
     func priceIsUp() -> Bool {

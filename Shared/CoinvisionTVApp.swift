@@ -31,6 +31,7 @@ struct CoinvisionTVApp: App {
                 .onChange(of: scenePhase) { newPhase in
                     handle(scenePhase: newPhase)
                 }
+                .frame(minWidth: 900, minHeight: 380, idealHeight: 780)
             #else
             MainView()
                 .environmentObject(dataProvider)
@@ -40,9 +41,6 @@ struct CoinvisionTVApp: App {
                 }
             #endif
         }
-//        #if os(macOS)
-//        .windowStyle(TitleBarWindowStyle())
-//        #endif
     }
     
     func handle(scenePhase: ScenePhase) {

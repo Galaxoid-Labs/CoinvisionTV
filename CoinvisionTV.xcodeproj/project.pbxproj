@@ -136,8 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				473ECFFC27332AAB00DED978 /* Views */,
-				473ECF8C2733243500DED978 /* CoinvisionTVApp.swift */,
 				473ECF8D2733243500DED978 /* MainView.swift */,
+				473ECF8C2733243500DED978 /* CoinvisionTVApp.swift */,
 				473ECFF8273329FB00DED978 /* DataProvider.swift */,
 				473ECF8E2733243600DED978 /* Assets.xcassets */,
 			);

@@ -10,25 +10,30 @@ import SwiftUI
 struct MacMainView: View {
     
     @EnvironmentObject var dataProvider: DataProvider
-    @State private var selectedMarketItem: MarketItem? = nil
+    @State private var listViewActive = true
+    @State private var tilesViewActive = false
+    @State private var bubblesViewActive = false
+    @State private var optionsViewActive = false
     
     var body: some View {
         
-        NavigationView {
+        if listViewActive || tilesViewActive {
             
-            SidebarView(selectedMarketItem: $selectedMarketItem)
-                .frame(minWidth: 200)
-                .toolbar {
-                    Button(action: toggleSidebar) {
-                        Image(systemName: "sidebar.left")
-                            .help("Toggle Sidebar")
+            NavigationView {
+                
+                SidebarView(listViewActive: $listViewActive, tilesViewActive: $tilesViewActive,
+                            bubblesViewActive: $bubblesViewActive, optionsViewActive: $optionsViewActive)
+                    .frame(minWidth: 200)
+                    .toolbar {
+                        Button(action: toggleSidebar) {
+                            Image(systemName: "sidebar.left")
+                                .help("Toggle Sidebar")
+                            }
                         }
-                    }
-
-            Text("Placeholder")
-            if selectedMarketItem != nil {
-                ListMarketItemDetailView(marketItem: $selectedMarketItem)
-            } else {
+                
+                
+                EmptyView()
+                
                 VStack {
                     Text("Select a coin from the list for more information.")
                         .font(.title3)
@@ -36,11 +41,31 @@ struct MacMainView: View {
                 .padding()
                 .background(Material.thick)
                 .cornerRadius(8)
+                .frame(minWidth: 450, idealWidth: 600)
+
             }
+            .navigationTitle("Coinvision TV")
+            .navigationViewStyle(.columns)
+            
+        } else {
+            
+            NavigationView {
+                
+                SidebarView(listViewActive: $listViewActive, tilesViewActive: $tilesViewActive,
+                            bubblesViewActive: $bubblesViewActive, optionsViewActive: $optionsViewActive)
+                    .frame(minWidth: 200)
+                    .toolbar {
+                        Button(action: toggleSidebar) {
+                            Image(systemName: "sidebar.left")
+                                .help("Toggle Sidebar")
+                            }
+                        }
+
+            }
+            .navigationTitle("Coinvision TV")
+            .navigationViewStyle(.columns)
             
         }
-        .navigationTitle("Coinvision TV")
-        .navigationViewStyle(.columns)
 
     }
 
@@ -53,8 +78,10 @@ struct MacMainView: View {
 
 struct SidebarView: View {
     
-    @State private var isDefaultItemActive = true
-    @Binding var selectedMarketItem: MarketItem?
+    @Binding var listViewActive: Bool
+    @Binding var tilesViewActive: Bool
+    @Binding var bubblesViewActive: Bool
+    @Binding var optionsViewActive: Bool
     @EnvironmentObject var dataProvider: DataProvider
     
     var body: some View {
@@ -62,23 +89,26 @@ struct SidebarView: View {
         List {
             
             Section("Menu") {
-                NavigationLink(destination: ListView(selectedMarketItem: $selectedMarketItem),
-                               isActive: $isDefaultItemActive,
+                NavigationLink(destination: ListView(),
+                               isActive: $listViewActive,
                                label: {
                     Label("List", systemImage: "list.bullet.rectangle.fill")
                 })
                 
-                NavigationLink(destination: TilesView(selectedMarketItem: $selectedMarketItem),
+                NavigationLink(destination: TilesView(),
+                               isActive: $tilesViewActive,
                                label: {
                     Label("Tiles", systemImage: "square.grid.3x2.fill")
                 })
                 
                 NavigationLink(destination: BubblesView(),
+                               isActive: $bubblesViewActive,
                                label: {
                     Label("Bubbles", systemImage: "circle.hexagongrid.fill")
                 })
                 
                 NavigationLink(destination: OptionsView(),
+                               isActive: $optionsViewActive,
                                label: {
                     Label("Options", systemImage: "gearshape")
                 })

@@ -13,7 +13,7 @@ import Charts
 
 struct ListMarketItemDetailView: View {
     
-    @Binding var marketItem: MarketItem?
+    let marketItemId: String
     
     @EnvironmentObject var dataProvider: DataProvider
     
@@ -24,6 +24,10 @@ struct ListMarketItemDetailView: View {
     @State private var chartXLabels: [String] = []
     @State private var chartYData: [Double] = []
     @State private var percentageChange: CoinGecko.V3.Coins.Markets.PriceChangePeriod = .percentage24h
+    
+    var marketItem: MarketItem? {
+        return dataProvider.marketItems.first(where: { $0.id == marketItemId })
+    }
     
     var body: some View {
         
@@ -78,7 +82,7 @@ struct ListMarketItemDetailView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .onChange(of: chartSegment) { _ in
                         Task {
-                            await load()
+                            await load(marketItemId: marketItemId)
                         }
                     }
                     .frame(maxWidth: 300)
@@ -86,89 +90,91 @@ struct ListMarketItemDetailView: View {
                     
                     HStack(spacing: 16) {
                         
-                        VStack(alignment: .leading) {
-                            Text("\((marketItemChartPrices?.simplifiedYAxisValues().first ?? .zero).formatted(.currency(code: dataProvider.currencyCode).precision(.fractionLength(2...6))))")
-                                //.padding()
-                                .shadow(radius: 1)
-                            Spacer()
-                            Text("\((marketItemChartPrices?.simplifiedYAxisValues()[1] ?? .zero).formatted(.currency(code: dataProvider.currencyCode).precision(.fractionLength(2...6))))")
-                                //.padding()
-                                .shadow(radius: 1)
-                            Spacer()
-                            Text("\((marketItemChartPrices?.simplifiedYAxisValues().last ?? .zero).formatted(.currency(code: dataProvider.currencyCode).precision(.fractionLength(2...6))))")
-                                //.padding()
-                                .shadow(radius: 1)
-
-                        }
-                        .font(.caption)
-                        
-                        VStack {
-                            ZStack {
-                                Chart(data: marketItemChartPrices?.normalizedPrices() ?? [])
-                                    .chartStyle(
-                                        AreaChartStyle(.quadCurve, fill:
-                                                        LinearGradient(gradient: .init(colors: [chartIsUp() ? Color.green.opacity(0.3) : Color.red.opacity(0.3), chartIsUp() ? Color.green.opacity(0.08) : Color.red.opacity(0.08)]), startPoint: .top, endPoint: .bottom)
-                                        )
-                                    )
-                                    .frame(height: 200)
-                                Chart(data: marketItemChartPrices?.normalizedPrices() ?? [])
-                                    .chartStyle(
-                                        LineChartStyle(.quadCurve, lineColor: chartIsUp() ? Color.green : Color.red, lineWidth: 2)
-                                    )
-                                    .frame(height: 200)
-                                    .offset(x: 0, y: 1)
+                        if loading {
+                            VStack(spacing: 8) {
+                                ProgressView()
+                                Text("Fetching charts...")
                             }
+                            .frame(height: 200)
+
+                        } else {
+                            
+                            VStack(alignment: .leading) {
+                                Text("\((marketItemChartPrices?.simplifiedYAxisValues().first ?? .zero).formatted(.currency(code: dataProvider.currencyCode).precision(.fractionLength(2...6))))")
+                                    //.padding()
+                                    .shadow(radius: 1)
+                                Spacer()
+                                Text("\((marketItemChartPrices?.simplifiedYAxisValues()[1] ?? .zero).formatted(.currency(code: dataProvider.currencyCode).precision(.fractionLength(2...6))))")
+                                    //.padding()
+                                    .shadow(radius: 1)
+                                Spacer()
+                                Text("\((marketItemChartPrices?.simplifiedYAxisValues().last ?? .zero).formatted(.currency(code: dataProvider.currencyCode).precision(.fractionLength(2...6))))")
+                                    //.padding()
+                                    .shadow(radius: 1)
+
+                            }
+                            .font(.caption)
+                            
+                            VStack {
+                                ZStack {
+                                    Chart(data: marketItemChartPrices?.normalizedPrices() ?? [])
+                                        .chartStyle(
+                                            AreaChartStyle(.quadCurve, fill:
+                                                            LinearGradient(gradient: .init(colors: [chartIsUp() ? Color.green.opacity(0.3) : Color.red.opacity(0.3), chartIsUp() ? Color.green.opacity(0.08) : Color.red.opacity(0.08)]), startPoint: .top, endPoint: .bottom)
+                                            )
+                                        )
+                                        .frame(height: 200)
+                                    Chart(data: marketItemChartPrices?.normalizedPrices() ?? [])
+                                        .chartStyle(
+                                            LineChartStyle(.quadCurve, lineColor: chartIsUp() ? Color.green : Color.red, lineWidth: 2)
+                                        )
+                                        .frame(height: 200)
+                                        .offset(x: 0, y: 1)
+                                }
+                            }
+                            .background(Material.ultraThinMaterial)
+                            .cornerRadius(8)
                         }
-                        .background(Material.thickMaterial)
-//                        .overlay(
-//                            RoundedRectangle(cornerRadius: 8)
-//                                .stroke(Material.ultraThickMaterial, lineWidth: 8)
-//                        )
-                        .cornerRadius(8)
 
                     }
 
                 }
                 .padding()
-                .background(Material.thick)
+                .background(Material.ultraThinMaterial)
                 .cornerRadius(8)
-                .redacted(reason: loading ? .placeholder : [])
                 
                 Section("Stats") {
                     getSectionStats()
-                        .redacted(reason: loading ? .placeholder : [])
                 }
 
-                if !getDescription().isEmpty {
+                if !(marketItemDetail?.getFormattedDescription(forLocale: dataProvider.languageCode) ?? "").isEmpty {
                     Section("About") {
-
                         LazyVStack {
-                            Text(getDescription())
+                            Text(marketItemDetail?.getFormattedDescription(forLocale: dataProvider.languageCode) ?? "")
                                 .foregroundColor(.secondary)
                                 .lineSpacing(4)
                                 .padding(.horizontal, 4)
                                 .padding(.vertical, 8)
+                                .redacted(reason: loading ? .placeholder : [])
                         }
                         .padding()
-                        .background(Material.thick)
+                        .background(Material.ultraThinMaterial)
                         .cornerRadius(8)
-
                     }
-                    .redacted(reason: loading ? .placeholder : [])
                 }
 
             }
             
         }
         .task {
-            await load()
+            await load(marketItemId: marketItemId)
         }
-        .onChange(of: marketItem?.id) { v in
+        .onChange(of: marketItemId) { newValue in
             Task {
-                await load()
+                await load(marketItemId: newValue)
             }
         }
-        .frame(minWidth: 450)
+        .frame(minWidth: 450, idealWidth: 600)
 
     }
     
@@ -242,13 +248,12 @@ struct ListMarketItemDetailView: View {
 
         }
         .padding()
-        .background(Material.thick)
+        .background(Material.ultraThinMaterial)
         .cornerRadius(8)
     }
     
-    func load() async {
-        
-        print("LOADING")
+    func load(marketItemId: String) async {
+
         loading = true
         
         var days = 1
@@ -271,37 +276,16 @@ struct ListMarketItemDetailView: View {
         default:
             days = 1
         }
-        
-        marketItemChartPrices = try? await CoinGecko.V3.Coins.MarketChart.get(byId: marketItem?.id ?? "",
+
+        marketItemChartPrices = try? await CoinGecko.V3.Coins.MarketChart.get(byId: marketItemId,
                                                                               vsCurrency: dataProvider.currencyCode,
                                                                               days: "\(days)", interval: "")
-        
-        marketItemDetail = try? await CoinGecko.V3.Coins.get(byId: marketItem?.id ?? "")
-        
+
+        marketItemDetail = try? await CoinGecko.V3.Coins.get(byId: marketItemId)
+
         chartYData = marketItemChartPrices?.flattendPrices() ?? []
         
         loading = false
-    }
-    
-    func getDescription() -> String {
-        
-        let descriptionComponents = (marketItemDetail?.getDescription(forLocale: dataProvider.languageCode) ?? "").components(separatedBy: "\r\n\r\n")
-        
-        var ret: [String] = []
-        
-        for desc in descriptionComponents {
-            
-            if !desc.isEmpty {
-            
-                if let doc = try? SwiftSoup.parse(desc), let text = try? doc.text() {
-                    ret.append(text)
-                }
-                
-            }
-            
-        }
-        
-        return ret.map{String($0)}.joined(separator: "\r\r")
         
     }
     
@@ -321,7 +305,7 @@ struct ListMarketItemDetailView: View {
 struct ListMarketItemDetailView_Previews: PreviewProvider {
     static let dataProvider = DataProvider()
     static var previews: some View {
-        ListMarketItemDetailView(marketItem: .constant(nil))
+        ListMarketItemDetailView(marketItemId: "bitcoin")
             .environmentObject(dataProvider)
     }
 }
