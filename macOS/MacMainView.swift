@@ -13,7 +13,6 @@ struct MacMainView: View {
     @State private var listViewActive = true
     @State private var tilesViewActive = false
     @State private var bubblesViewActive = false
-    @State private var optionsViewActive = false
     
     var body: some View {
         
@@ -22,7 +21,7 @@ struct MacMainView: View {
             NavigationView {
                 
                 SidebarView(listViewActive: $listViewActive, tilesViewActive: $tilesViewActive,
-                            bubblesViewActive: $bubblesViewActive, optionsViewActive: $optionsViewActive)
+                            bubblesViewActive: $bubblesViewActive)
                     .frame(minWidth: 200)
                     .toolbar {
                         Button(action: toggleSidebar) {
@@ -34,10 +33,13 @@ struct MacMainView: View {
                 
                 EmptyView()
                 
-                VStack {
-                    Text("Select a coin from the list for more information.")
+                VStack(spacing: 16) {
+                    Image(systemName: "filemenu.and.cursorarrow")
+                        .font(.system(size: 42))
+                    Text("Select a coin for more detailed information.")
                         .font(.title3)
                 }
+                .foregroundColor(.secondary)
                 .padding()
                 .background(Material.thick)
                 .cornerRadius(8)
@@ -52,7 +54,7 @@ struct MacMainView: View {
             NavigationView {
                 
                 SidebarView(listViewActive: $listViewActive, tilesViewActive: $tilesViewActive,
-                            bubblesViewActive: $bubblesViewActive, optionsViewActive: $optionsViewActive)
+                            bubblesViewActive: $bubblesViewActive)
                     .frame(minWidth: 200)
                     .toolbar {
                         Button(action: toggleSidebar) {
@@ -81,7 +83,6 @@ struct SidebarView: View {
     @Binding var listViewActive: Bool
     @Binding var tilesViewActive: Bool
     @Binding var bubblesViewActive: Bool
-    @Binding var optionsViewActive: Bool
     @EnvironmentObject var dataProvider: DataProvider
     
     var body: some View {
@@ -107,11 +108,6 @@ struct SidebarView: View {
                     Label("Bubbles", systemImage: "circle.hexagongrid.fill")
                 })
                 
-                NavigationLink(destination: OptionsView(),
-                               isActive: $optionsViewActive,
-                               label: {
-                    Label("Options", systemImage: "gearshape")
-                })
             }
             
         }

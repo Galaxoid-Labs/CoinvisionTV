@@ -175,6 +175,8 @@ struct ListMarketItemDetailView: View {
             }
         }
         .frame(minWidth: 450, idealWidth: 600)
+        .preferredColorScheme(dataProvider.getColorScheme())
+        .navigationTitle("Coinvision TV")
 
     }
     

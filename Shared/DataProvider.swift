@@ -22,6 +22,7 @@ class DataProvider: ObservableObject {
     @Published var coinIds = [CoinId]()
     @Published var languageCode = "en"
     
+    @AppStorage("colorTheme") var colorTheme: ColorTheme = ColorTheme.dark
     @AppStorage("currencyCode") var currencyCode: String = "usd" {
         didSet {
             Task {
@@ -124,6 +125,14 @@ class DataProvider: ObservableObject {
         return marketItems.map({ $0.priceChangePercentage24H ?? .zero }).reduce(Double.zero, +)
     }
     
+    func getColorScheme() -> ColorScheme {
+        if colorTheme == .dark {
+            return ColorScheme.dark
+        } else {
+            return ColorScheme.light
+        }
+    }
+    
 }
 
 extension MarketItemDetail {
@@ -143,6 +152,14 @@ extension MarketItemDetail {
         
         return ret.map{String($0)}.joined(separator: "\r\r")
         
+    }
+    
+}
+
+extension Double {
+    
+    func normalize(min: Double, max: Double) -> Double {
+        return (self - min) / (max - min)
     }
     
 }

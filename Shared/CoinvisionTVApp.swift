@@ -13,21 +13,20 @@ struct CoinvisionTVApp: App {
     @StateObject var dataProvider = DataProvider()
     
     @Environment(\.scenePhase) var scenePhase
-    @AppStorage("colorTheme") var colorTheme: ColorTheme = ColorTheme.dark
     
     var body: some Scene {
         WindowGroup {
             #if os(tvOS)
             TVMainView()
                 .environmentObject(dataProvider)
-                .preferredColorScheme(getColorScheme())
+                .preferredColorScheme(dataProvider.getColorScheme())
                 .onChange(of: scenePhase) { newPhase in
                     handle(scenePhase: newPhase)
                 }
             #elseif os(macOS)
             MacMainView()
                 .environmentObject(dataProvider)
-                .preferredColorScheme(getColorScheme())
+                .preferredColorScheme(dataProvider.getColorScheme())
                 .onChange(of: scenePhase) { newPhase in
                     handle(scenePhase: newPhase)
                 }
@@ -41,6 +40,13 @@ struct CoinvisionTVApp: App {
                 }
             #endif
         }
+        #if os(macOS)
+        Settings {
+            SettingsView()
+                .environmentObject(dataProvider)
+                .preferredColorScheme(dataProvider.getColorScheme())
+        }
+        #endif
     }
     
     func handle(scenePhase: ScenePhase) {
@@ -62,11 +68,4 @@ struct CoinvisionTVApp: App {
         }
     }
     
-    func getColorScheme() -> ColorScheme {
-        if colorTheme == .dark {
-            return ColorScheme.dark
-        } else {
-            return ColorScheme.light
-        }
-    }
 }

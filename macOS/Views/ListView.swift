@@ -54,7 +54,6 @@ struct ListView: View {
             
         }
         .frame(minWidth: 450)
-        .background(Material.ultraThinMaterial)
 
     }
     

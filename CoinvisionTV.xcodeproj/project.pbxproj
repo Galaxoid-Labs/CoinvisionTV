@@ -55,6 +55,7 @@
 		473ED02B2734544C00DED978 /* ListMarketItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED02A2734544C00DED978 /* ListMarketItemDetailView.swift */; };
 		473ED02C27346A6700DED978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 473ECF8E2733243600DED978 /* Assets.xcassets */; };
 		473ED02E27347D2300DED978 /* TilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED02D27347D2300DED978 /* TilesView.swift */; };
+		473ED0302735B4EE00DED978 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473ED02F2735B4EE00DED978 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		473ED02827344B5500DED978 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		473ED02A2734544C00DED978 /* ListMarketItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMarketItemDetailView.swift; sourceTree = "<group>"; };
 		473ED02D27347D2300DED978 /* TilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilesView.swift; sourceTree = "<group>"; };
+		473ED02F2735B4EE00DED978 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				473ED02827344B5500DED978 /* ListView.swift */,
 				473ED02A2734544C00DED978 /* ListMarketItemDetailView.swift */,
 				473ED02D27347D2300DED978 /* TilesView.swift */,
+				473ED02F2735B4EE00DED978 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				473ECFFA273329FB00DED978 /* DataProvider.swift in Sources */,
 				473ED02B2734544C00DED978 /* ListMarketItemDetailView.swift in Sources */,
 				473ED00B27332AC100DED978 /* BubbleNode.swift in Sources */,
+				473ED0302735B4EE00DED978 /* SettingsView.swift in Sources */,
 				473ED00827332AC100DED978 /* OptionsView.swift in Sources */,
 				473ED01727332AC100DED978 /* BubblesView.swift in Sources */,
 				473ED02927344B5500DED978 /* ListView.swift in Sources */,
