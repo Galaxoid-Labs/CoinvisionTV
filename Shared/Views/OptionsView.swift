@@ -20,6 +20,7 @@ struct OptionsView: View {
     @State private var menuItemImageName: String = "gearshape"
     @State private var needsBack: Bool = false
     @AppStorage("colorTheme") var colorTheme: ColorTheme = ColorTheme.dark
+    @AppStorage("hideStableCoins") var hideStableCoins: Bool = true
     
     var body: some View {
         
@@ -177,6 +178,58 @@ struct OptionsView: View {
                             Text("Currency")
                             Spacer()
                             Text(dataProvider.currencyCode.uppercased())
+                                .foregroundColor(.secondary)
+                                .multilineTextAlignment(.trailing)
+                                .offset(x: 50, y: 0)
+                        }
+                    })
+                    
+                    NavigationLink(destination: {
+                        List {
+                            Button(action: {
+                                hideStableCoins = true
+                                self.menuItemImageName = "eye.slash"
+                            }) {
+                                HStack {
+                                    Text("Yes")
+                                    Spacer()
+                                    if hideStableCoins == true {
+                                        Image(systemName: "checkmark.circle.fill")
+                                    }
+                                }
+                            }
+                            Button(action: {
+                                hideStableCoins = false
+                                self.menuItemImageName = "eye"
+                            }) {
+                                HStack {
+                                    Text("No")
+                                    Spacer()
+                                    if hideStableCoins == false {
+                                        Image(systemName: "checkmark.circle.fill")
+                                    }
+                                }
+                            }
+                        }
+                        .padding(.leading, 64)
+                        #if os(tvOS) || os(iOS)
+                        .listStyle(GroupedListStyle())
+                        #endif
+                        .onAppear {
+                            withAnimation {
+                                self.menuLabel = "Hide Stable Coins"
+                                self.menuItemImageName = hideStableCoins == true ? "eye.slash" : "eye"
+                                self.needsBack = true
+                            }
+                        }
+                        .onDisappear {
+                            self.resetMenu()
+                        }
+                    }, label: {
+                        HStack(spacing: 0) {
+                            Text("Hide Stable Coins")
+                            Spacer()
+                            Text(hideStableCoins == true ? "Yes" : "No")
                                 .foregroundColor(.secondary)
                                 .multilineTextAlignment(.trailing)
                                 .offset(x: 50, y: 0)

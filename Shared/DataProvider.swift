@@ -18,6 +18,15 @@ typealias MarketItemDetail = CoinGecko.V3.Coins.Response
 
 class DataProvider: ObservableObject {
     
+    static let stableCoinSymbols = [
+        "USDC",
+        "BUSD",
+        "UST",
+        "TUSD",
+        "USDT",
+        "FRAX"
+    ]
+    
     @Published var marketItems = [MarketItem]()
     @Published var coinIds = [CoinId]()
     @Published var languageCode = "en"
@@ -32,6 +41,14 @@ class DataProvider: ObservableObject {
         }
     }
     @AppStorage("marketsOrder") var marketsOrder: CoinGecko.V3.Coins.Markets.Order = .market_cap_desc {
+        didSet {
+            Task {
+                await self.fetchAndSetMarketItems()
+                self.setupPollingTimer()
+            }
+        }
+    }
+    @AppStorage("hideStableCoins") var hideStableCoins: Bool = true {
         didSet {
             Task {
                 await self.fetchAndSetMarketItems()
@@ -117,7 +134,11 @@ class DataProvider: ObservableObject {
     @MainActor
     func fetchAndSetMarketItems() async {
         if let marketItems = try? await CoinGecko.V3.Coins.Markets.get(vsCurrency: currencyCode, order: marketsOrder) {
-            self.marketItems = marketItems
+            if hideStableCoins {
+                self.marketItems = marketItems.filter { !DataProvider.stableCoinSymbols.contains($0.symbol.uppercased()) }
+            } else {
+                self.marketItems = marketItems
+            }
         }
     }
     
