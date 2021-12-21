@@ -63,7 +63,7 @@ struct OptionsView: View {
                         List {
                             Button(action: { dataProvider.marketsOrder = .market_cap_desc }) {
                                 HStack {
-                                    Text("Market Cap (Descending)")
+                                    Text("Market Cap ↓")
                                     Spacer()
                                     if dataProvider.marketsOrder == .market_cap_desc {
                                         Image(systemName: "checkmark.circle.fill")
@@ -72,7 +72,7 @@ struct OptionsView: View {
                             }
                             Button(action: { dataProvider.marketsOrder = .market_cap_asc }) {
                                 HStack {
-                                    Text("Market Cap (Ascending)")
+                                    Text("Market Cap ↑")
                                     Spacer()
                                     if dataProvider.marketsOrder == .market_cap_asc {
                                         Image(systemName: "checkmark.circle.fill")
@@ -81,7 +81,7 @@ struct OptionsView: View {
                             }
                             Button(action: { dataProvider.marketsOrder = .volume_desc }) {
                                 HStack {
-                                    Text("Volume (Descending)")
+                                    Text("Volume ↓")
                                     Spacer()
                                     if dataProvider.marketsOrder == .volume_desc {
                                         Image(systemName: "checkmark.circle.fill")
@@ -90,7 +90,7 @@ struct OptionsView: View {
                             }
                             Button(action: { dataProvider.marketsOrder = .volume_asc }) {
                                 HStack {
-                                    Text("Volume (Ascending)")
+                                    Text("Volume ↑")
                                     Spacer()
                                     if dataProvider.marketsOrder == .volume_asc {
                                         Image(systemName: "checkmark.circle.fill")
@@ -99,7 +99,7 @@ struct OptionsView: View {
                             }
                             Button(action: { dataProvider.marketsOrder = .gecko_desc }) {
                                 HStack {
-                                    Text("Coingecko Rating (Descending)")
+                                    Text("Coingecko Rating ↓")
                                     Spacer()
                                     if dataProvider.marketsOrder == .gecko_desc {
                                         Image(systemName: "checkmark.circle.fill")
@@ -108,7 +108,7 @@ struct OptionsView: View {
                             }
                             Button(action: { dataProvider.marketsOrder = .gecko_asc }) {
                                 HStack {
-                                    Text("Coingecko Rating (Ascending)")
+                                    Text("Coingecko Rating ↑")
                                     Spacer()
                                     if dataProvider.marketsOrder == .gecko_asc {
                                         Image(systemName: "checkmark.circle.fill")
@@ -305,17 +305,17 @@ struct OptionsView: View {
     func getOrderingLabel() -> String {
         switch dataProvider.marketsOrder {
         case .market_cap_desc:
-            return "Market Cap (Descending)"
+            return "Market Cap ↓"
         case .market_cap_asc:
-            return "Market Cap (Ascending)"
+            return "Market Cap ↑"
         case .volume_desc:
-            return "Volume (Descending)"
+            return "Volume ↓"
         case .volume_asc:
-            return "Volume (Ascending)"
+            return "Volume ↑"
         case .gecko_desc:
-            return "Coingecko Rating (Descending)"
+            return "Coingecko Rating ↓"
         case .gecko_asc:
-            return "Coingecko Rating (Ascending)"
+            return "Coingecko Rating ↑"
         default:
             return "Market Cap"
         }
