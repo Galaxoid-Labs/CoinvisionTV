@@ -12,6 +12,7 @@ struct SettingsView: View {
     
     @State private var d = false
     @EnvironmentObject var dataProvider: DataProvider
+    @AppStorage("hideStableCoins") var hideStableCoins: Bool = true
     
     var body: some View {
         
@@ -49,6 +50,12 @@ struct SettingsView: View {
                     
                 }
                 .buttonStyle(.plain)
+                
+                Section("Filters") {
+                    Toggle(isOn: $hideStableCoins) {
+                        Text("Hide Stable Coins")
+                    }
+                }
                 
                 Section("Currency") {
                     

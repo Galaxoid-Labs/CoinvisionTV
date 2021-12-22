@@ -10,6 +10,9 @@ import SwiftUI
 @main
 struct CoinvisionTVApp: App {
     
+    #if os(macOS)
+    @NSApplicationDelegateAdaptor private var appDelegate: AppDelegate
+    #endif
     @StateObject var dataProvider = DataProvider()
     
     @Environment(\.scenePhase) var scenePhase
@@ -69,3 +72,32 @@ struct CoinvisionTVApp: App {
     }
     
 }
+
+#if os(macOS)
+class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    func applicationDidChangeOcclusionState(_ notification: Notification) {
+        if let window = NSApp.windows.first, window.isMiniaturized {
+            NSWorkspace.shared.runningApplications.first(where: {
+                $0.activationPolicy == .regular
+            })?.activate(options: .activateAllWindows)
+        }
+    }
+    
+    func applicationDidBecomeActive(_ notification: Notification) {
+        if let window = NSApp.windows.first {
+            window.deminiaturize(nil)
+        }
+    }
+    
+    lazy var windows = NSWindow()
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+         if !flag {
+             for window in sender.windows {
+                 window.makeKeyAndOrderFront(self)
+             }
+         }
+         return true
+     }
+}
+#endif

@@ -68,16 +68,30 @@ class BubblesScene: SKScene {
     var physicsField: SKFieldNode?
     var bubbleNodes: Set<BubbleNode> = []
     
+    func prefix() -> Int {
+        let sw = self.view?.frame.width ?? .zero
+        if sw < 800 {
+            return 35
+        } else if sw < 900 {
+            return 50
+        } else if sw < 1280 {
+            return 65
+        }
+        return 100
+    }
+    
     var bubbleModels: [BubbleModel] {
         
-        let negatives = self.marketItems.prefix(100)
+        let sw = self.view?.frame.width ?? .zero
+        
+        let negatives = self.marketItems.prefix(prefix())
             .filter({ !$0.isUp() })
             .sorted(by: { ($0.priceChangePercentage24H ?? .zero) < ($1.priceChangePercentage24H ?? .zero) })
         
         let nmax = abs(negatives.first?.priceChangePercentage24H ?? 0.0)
         let nmin = abs(negatives.last?.priceChangePercentage24H ?? 0.0)
         
-        let positives = self.marketItems.prefix(100)
+        let positives = self.marketItems.prefix(prefix())
             .filter({ $0.isUp() })
             .sorted(by: { ($0.priceChangePercentage24H ?? .zero) > ($1.priceChangePercentage24H ?? .zero) })
         
@@ -88,14 +102,14 @@ class BubblesScene: SKScene {
             .map({ BubbleModel(id: $0.id, symbol: $0.symbol,
                                normalizedPercentage: abs($0.priceChangePercentage24H ?? .zero).normalize(min: nmin, max: nmax),
                                percentage: $0.priceChangePercentage24H ?? .zero,
-                               isUp: $0.isUp(), image: $0.image)
+                               isUp: $0.isUp(), image: $0.image, radiusModifier: sw > 1280 ? 1.0 : 0.25)
             })
         
         let positiveBubbleModels = positives
             .map({ BubbleModel(id: $0.id, symbol: $0.symbol,
                                normalizedPercentage: ($0.priceChangePercentage24H ?? .zero).normalize(min: pmin, max: pmax),
                                percentage: $0.priceChangePercentage24H ?? .zero,
-                               isUp: $0.isUp(), image: $0.image)
+                               isUp: $0.isUp(), image: $0.image, radiusModifier: sw > 1280 ? 1.0 : 0.25)
             })
         
         var retval = [BubbleModel]()
@@ -229,14 +243,18 @@ struct BubbleModel {
     let percentage: Double
     let isUp: Bool
     let image: String
+    let radiusModifier: Double
     
-    init(id: String, symbol: String, normalizedPercentage: Double, percentage: Double, isUp: Bool, image: String) {
+    init(id: String, symbol: String, normalizedPercentage: Double,
+         percentage: Double, isUp: Bool, image: String,
+         radiusModifier: Double) {
         self.id = id
         self.symbol = symbol
         self.normalizedPercentage = normalizedPercentage
         self.percentage = percentage
         self.isUp = isUp
         self.image = image
+        self.radiusModifier = radiusModifier
     }
     
 }

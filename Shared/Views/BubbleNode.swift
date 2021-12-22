@@ -25,14 +25,23 @@ class BubbleNode: SKNode {
         let absPercentage = abs(bubbleModel.percentage)
         let percentageString = bubbleModel.percentage.formatted(.number.precision(.fractionLength(2)))
         
-        var radius = baseRadius + (absPercentage * 2)
+        var oradius = baseRadius + (absPercentage * 2)
+        var radius = baseRadius + (absPercentage * 2) * bubbleModel.radiusModifier
 
+        if oradius > maxRadius {
+            oradius = maxRadius
+        }
+        
         if radius > maxRadius {
             radius = maxRadius
         }
 
         let strokeSize = (radius / 4) * 0.25
-        let strokeColorAlpha = strokeSize * 0.2
+        var strokeColorAlpha = strokeSize * 0.2
+        if bubbleModel.radiusModifier != 1.0 {
+            strokeColorAlpha = ((oradius / 4) * 0.25) * 0.2
+        }
+        
         var symbolLabelSize = 14 + absPercentage
 
         if symbolLabelSize > maxLabelSize {
@@ -41,7 +50,7 @@ class BubbleNode: SKNode {
 
         var percentageLableSize = symbolLabelSize * 0.65
 
-        if symbol.count > 4 {
+        if symbol.count > 3 {
             symbolLabelSize *= 0.65
             percentageLableSize = symbolLabelSize - 1
         }
@@ -97,15 +106,24 @@ class BubbleNode: SKNode {
         let absPercentage = abs(bubbleModel.percentage)
         let percentageString = bubbleModel.percentage.formatted(.number.precision(.fractionLength(2)))
         
-        var radius = baseRadius + (absPercentage * 2)
+        var oradius = baseRadius + (absPercentage * 2)
+        var radius = baseRadius + (absPercentage * 2) * bubbleModel.radiusModifier
 
+        if oradius > maxRadius {
+            oradius = maxRadius
+        }
+        
         if radius > maxRadius {
             radius = maxRadius
         }
 
         let strokeSize = (radius / 4) * 0.25
-        let strokeColorAlpha = strokeSize * 0.2
-        var symbolLabelSize = 14 + absPercentage
+        var strokeColorAlpha = strokeSize * 0.2
+        if bubbleModel.radiusModifier != 1.0 {
+            strokeColorAlpha = ((oradius / 4) * 0.25) * 0.2
+        }
+        
+        var symbolLabelSize = (14 + absPercentage)
 
         if symbolLabelSize > maxLabelSize {
             symbolLabelSize = maxLabelSize
@@ -113,7 +131,7 @@ class BubbleNode: SKNode {
 
         var percentageLableSize = symbolLabelSize * 0.65
 
-        if symbol.count > 4 {
+        if symbol.count > 3 {
             symbolLabelSize *= 0.65
             percentageLableSize = symbolLabelSize - 1
         }
