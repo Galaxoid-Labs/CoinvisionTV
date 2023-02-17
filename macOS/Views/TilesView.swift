@@ -35,8 +35,7 @@ struct TilesView: View {
                 LazyVGrid(columns: columns, spacing: 8) {
                     ForEach(dataProvider.marketItems) { marketItem in
                         Button(action: { self.selectedMarketItem = marketItem; self.isDetailActive = true }) {
-                            
-                            TileView(marketItem: marketItem)
+                            TileView(marketItem: marketItem, isSelected: self.selectedMarketItem?.id == marketItem.id)
                         }
                         .buttonStyle(.plain)
                     }
@@ -52,6 +51,7 @@ struct TilesView: View {
 struct TileView: View {
     
     let marketItem: MarketItem
+    let isSelected: Bool
     
     @EnvironmentObject var dataProvider: DataProvider
     
@@ -99,9 +99,16 @@ struct TileView: View {
         }
         .padding(8)
         .background(LinearGradient(colors: [(isUp() ? .green.opacity(0.2) : .red.opacity(0.2)), (isUp() ? .green.opacity(0.1) : .red.opacity(0.1))], startPoint: .top, endPoint: .bottom))
+        .cornerRadius(8)
         .overlay(
-            RoundedRectangle(cornerRadius: 4)
-                .stroke(isUp() ? .green : .red, lineWidth: 2)
+
+            isSelected ?
+                RoundedRectangle(cornerRadius: 4)
+                    .stroke(Color.accentColor, lineWidth: 2)
+            :
+                RoundedRectangle(cornerRadius: 4)
+                    .stroke(isUp() ? .green : .red, lineWidth: 2)
+
         )
         
     }
