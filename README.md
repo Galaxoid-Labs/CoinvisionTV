@@ -1,7 +1,7 @@
 # CoinvisionTV
 CoinvisionTV - Crytpo Market Stats
 
-You can get in on the Mac App Store here -> https://apps.apple.com/us/app/basio/id1582059672?platform=iphone
+You can get in on the Mac App Store here -> https://apps.apple.com/us/app/coinvision-tv/id1593474537
 
 Also available on tvOS
 
